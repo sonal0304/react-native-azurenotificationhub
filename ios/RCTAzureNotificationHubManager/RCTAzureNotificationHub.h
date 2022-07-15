@@ -10,7 +10,7 @@
 #ifndef RCTAzureNotificationHub_h
 #define RCTAzureNotificationHub_h
 
-@import UserNotifications;
+#import <UserNotifications/UNUserNotificationCenter.h>;
 
 // Notification Hub events
 extern NSString *const RCTLocalNotificationReceived;
