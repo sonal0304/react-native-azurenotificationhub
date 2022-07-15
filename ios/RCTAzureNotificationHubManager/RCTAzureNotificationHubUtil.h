@@ -12,7 +12,7 @@
 
 #import <WindowsAzureMessaging/WindowsAzureMessaging.h>
 
-@import UserNotifications;
+#import <UserNotifications/UNUserNotificationCenter.h>;
 
 @interface RCTAzureNotificationHubUtil : NSObject
 
