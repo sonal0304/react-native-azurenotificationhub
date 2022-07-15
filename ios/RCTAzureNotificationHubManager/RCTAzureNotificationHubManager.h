@@ -11,7 +11,7 @@
 
 #import "RCTAzureNotificationHandler.h"
 
-#import <UserNotifications/UNUserNotificationCenter.h>;
+#import <UserNotifications/UNUserNotificationCenter.h>
 
 @interface RCTAzureNotificationHubManager : RCTEventEmitter
 
