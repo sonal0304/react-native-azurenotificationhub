@@ -148,6 +148,6 @@
     <orderEntry type="library" name="Gradle: com.facebook.fresco:nativeimagefilters:2.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:nativeimagetranscoder:2.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:imagepipeline-okhttp3:2.0.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.microsoft.azure:notification-hubs-android-sdk:0.6@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.microsoft.azure:notification-hubs-android-sdk:2.0.0@aar" level="project" />
   </component>
 </module>

@@ -28,7 +28,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
     implementation 'com.facebook.react:react-native:+'
     implementation 'com.google.firebase:firebase-messaging:17.6.0'
-    implementation 'com.microsoft.azure:notification-hubs-android-sdk:0.6'
+    implementation 'com.microsoft.azure:notification-hubs-android-sdk:2.0.0'
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
 }
 

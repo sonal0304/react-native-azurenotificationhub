@@ -189,7 +189,7 @@ dependencies {
     implementation project(":react-native-azurenotificationhub")  // From node_modules
     implementation "com.google.firebase:firebase-messaging:17.6.0"
     implementation "com.google.firebase:firebase-core:16.0.8"
-    implementation "com.microsoft.azure:notification-hubs-android-sdk:0.6@aar"
+    implementation "com.microsoft.azure:notification-hubs-android-sdk:2.0.0@aar"
     testImplementation "org.powermock:powermock-core:2.0.2"
     testImplementation "org.powermock:powermock-api-mockito2:2.0.2"
     testImplementation "org.powermock:powermock-module-junit4:2.0.2"
