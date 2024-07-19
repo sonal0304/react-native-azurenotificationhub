@@ -25,3 +25,4 @@ DerivedData
 *.xcuserstate
 ios/.xcode.env.local
 xcshareddata
+node_modules
