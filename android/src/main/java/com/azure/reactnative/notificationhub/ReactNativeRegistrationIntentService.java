@@ -1,19 +1,13 @@
-package com.azure.reactnative.notificationhub;
-
+import com.microsoft.windowsazure.notifications.NotificationsManager;
+import com.microsoft.windowsazure.mobileservices.*;
 import android.content.Context;
 import android.content.Intent;
-
-import androidx.core.app.JobIntentService;
-
 import android.util.Log;
-
+import androidx.core.app.JobIntentService;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 import com.microsoft.windowsazure.messaging.NotificationHub;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class ReactNativeRegistrationIntentService extends JobIntentService {
 
@@ -62,20 +56,15 @@ public class ReactNativeRegistrationIntentService extends JobIntentService {
                             // sent to your server. If it is not stored, send the token to your server.
                             // Also check if the token has been compromised and needs refreshing.
                             if (regID == null || storedToken != token) {
-                                NotificationHub hub = ReactNativeUtil.createNotificationHub(hubName, connectionString,
-                                        ReactNativeRegistrationIntentService.this);
+                                NotificationHub hub = new NotificationHub(connectionString, hubName);
                                 Log.d(TAG, "NH Registration refreshing with token : " + token);
 
-                                if (isTemplated) {
-                                    regID = hub.registerTemplate(
-                                            token, templateName, template, tags).getRegistrationId();
-                                } else {
-                                    regID = hub.register(token, tags).getRegistrationId();
-                                }
+                                // Create FCMv1 registration
+                                FcmV1Registration registration = hub.createRegistration(new FcmV1Registration(token));
 
-                                Log.d(TAG, "New NH Registration Successfully - RegId : " + regID);
+                                Log.d(TAG, "New NH Registration Successfully - RegId : " + registration.getRegistrationId());
 
-                                notificationHubUtil.setRegistrationID(ReactNativeRegistrationIntentService.this, regID);
+                                notificationHubUtil.setRegistrationID(ReactNativeRegistrationIntentService.this, registration.getRegistrationId());
                                 notificationHubUtil.setFCMToken(ReactNativeRegistrationIntentService.this, token);
 
                                 event.putExtra(
@@ -85,7 +74,7 @@ public class ReactNativeRegistrationIntentService extends JobIntentService {
                                         ReactNativeConstants.KEY_INTENT_EVENT_TYPE,
                                         ReactNativeConstants.INTENT_EVENT_TYPE_STRING);
                                 event.putExtra(
-                                        ReactNativeConstants.KEY_INTENT_EVENT_STRING_DATA, regID);
+                                        ReactNativeConstants.KEY_INTENT_EVENT_STRING_DATA, registration.getRegistrationId());
                                 ReactNativeNotificationsHandler.sendBroadcast(
                                         ReactNativeRegistrationIntentService.this, event, 0);
 
