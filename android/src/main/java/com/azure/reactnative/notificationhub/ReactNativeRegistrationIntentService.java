@@ -8,6 +8,12 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 import com.microsoft.windowsazure.messaging.NotificationHub;
+import com.microsoft.windowsazure.messaging.notificationhubs.FcmV1Registration;
+import com.azure.reactnative.notificationhub.util.ReactNativeConstants;
+import com.azure.reactnative.notificationhub.util.ReactNativeNotificationHubUtil;
+import com.azure.reactnative.notificationhub.util.ReactNativeNotificationsHandler;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ExecutorService;
 
 public class ReactNativeRegistrationIntentService extends JobIntentService {
 

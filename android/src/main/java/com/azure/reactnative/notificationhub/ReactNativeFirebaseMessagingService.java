@@ -10,6 +10,7 @@ import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.azure.reactnative.notificationhub.ReactNativeRegistrationIntentService;
 
 import static com.azure.reactnative.notificationhub.ReactNativeConstants.*;
 
