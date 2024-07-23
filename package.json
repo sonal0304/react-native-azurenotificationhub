@@ -25,5 +25,10 @@
     "react": "^15.3.0",
     "react-native": "^0.32.1",
     "react-native-windows": "^0.32.0"
+  },
+  "dependencies": {
+    "@react-native-firebase/iid": "^11.5.0",
+    "azure-arm-mobileengagement": "^1.0.0-preview",
+    "googleapis-common": "^7.2.0"
   }
 }
